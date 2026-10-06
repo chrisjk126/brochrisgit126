@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official OPay Platform & Security Guidelines</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        :root {
+            --primary: #00B875;
+            --primary-dark: #008756;
+            --dark-navy: #0A1128;
+            --light-bg: #F8FAFC;
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --danger: #EF4444;
+            --danger-bg: #FEF2F2;
+            --danger-border: #FCA5A5;
+            --danger-text: #991B1B;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--dark-navy);
+        }
+
+        .emergency-btn {
+            background: var(--danger);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .emergency-btn:hover {
+            background: #DC2626;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #0A1128 0%, #1E293B 100%);
+            color: var(--white);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #94A3B8;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* CONTAINER & LAYOUT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark-navy);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* EMERGENCY ALERT BANNER */
+        .alert-banner {
+            background: var(--danger-bg);
+            border: 1px solid var(--danger-border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+            align-items: flex-start;
+        }
+
+        .alert-banner i {
+            font-size: 2.5rem;
+            color: var(--danger);
+        }
+
+        .alert-content h3 {
+            color: var(--danger-text);
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .alert-content p {
+            color: #7F1D1D;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .ussd-pills {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .ussd-pill {
+            background: var(--white);
+            border: 1px solid var(--danger-border);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--danger-text);
+        }
+
+        /* CARDS GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(0, 184, 117, 0.1);
+            color: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark-navy);
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-navy);
+            color: #94A3B8;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #1E293B;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .alert-banner { flex-direction: column; }
+            .ussd-pills { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-wallet"></i> OPay<span>.</span>
+            </a>
+            <a href="opayweb.com/help" class="emergency-btn">
+                <i class="fa-solid fa-lock"></i> Freeze Account
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Official OPay <span>User & Safety Guidelines</span></h1>
+        <p>Your comprehensive operational standards, security rules, and user protection policies designed for seamless banking.</p>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- EMERGENCY ACTION BANNER -->
+        <div class="alert-banner" id="emergency">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <div class="alert-content">
+                <h3>Emergency Phone or SIM Loss Guidelines</h3>
+                <p>If your mobile phone is misplaced or stolen, dial these USSD codes immediately from any available device to protect your account balance:</p>
+                <div class="ussd-pills">
+                    <div class="ussd-pill">Freeze Account: *955*131#</div>
+                    <div class="ussd-pill">Block Debit Card: *955*132#</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 1: USER SECURITY GUIDELINES -->
+        <div class="section-header">
+            <h2>1. Account Security & Protection Features</h2>
+            <p>Rules and tools designed to prevent unauthorized account access.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-moon"></i></div>
+                <h3>NightGuard Protection</h3>
+                <ul>
+                    <li>Protects transactions between 11:00 PM and 7:00 AM automatically.</li>
+                    <li>Mandates facial recognition verification for overnight transfers.</li>
+                    <li>Guards your money against unauthorized nighttime access.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                <h3>Large Transaction Shield</h3>
+                <ul>
+                    <li>Set customized spending limits for outgoing transactions.</li>
+                    <li>Requires facial recognition for any transfer exceeding your limit.</li>
+                    <li>Allows daily and monthly total limit customization.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <h3>Safety PIN & Emergency Lock</h3>
+                <ul>
+                    <li>Use a secondary Safety PIN under pressure to silently restrict transfers.</li>
+                    <li>Use 1-Tap Emergency Lock to freeze all transfers during suspicions.</li>
+                    <li>Prevents instant loss from physical duress or scam attempts.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 2: OPERATIONAL & COMPLIANCE RULES -->
+        <div class="section-header">
+            <h2>2. Credential Safety & Verification Rules</h2>
+            <p>Mandatory compliance guidelines for all active account owners.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-key"></i></div>
+                <h3>PIN & OTP Integrity</h3>
+                <ul>
+                    <li>Never disclose your 4-digit PIN, OTP, or CVV to anyone.</li>
+                    <li>OPay representatives will <strong>never</strong> request your PIN or passwords.</li>
+                    <li>Change PIN credentials every 60–90 days for safety.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-id-card"></i></div>
+                <h3>KYC Compliance Tiers</h3>
+                <ul>
+                    <li>Link valid identity credentials (NIN & BVN) to raise limits.</li>
+                    <li>Ensure registration phone numbers match official network records.</li>
+                    <li>Tier upgrades expand daily transaction and deposit capacity.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <h3>Verified Installation Rules</h3>
+                <ul>
+                    <li>Download updates only from Google Play and Apple App Store.</li>
+                    <li>Never download `.APK` files shared via WhatsApp, Telegram, or blogs.</li>
+                    <li>Verify publisher name is <strong>OPay Digital Services</strong>.</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 OPay Digital Services Limited. Licensed by the Central Bank of Nigeria (CBN) and insured by the NDIC.</p>
+    </footer>
+
+</body>
+</html>

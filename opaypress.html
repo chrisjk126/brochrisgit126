@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPay Press & Media Guidelines</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        :root {
+            --primary: #00B875;
+            --primary-dark: #008756;
+            --dark-navy: #0A1128;
+            --light-bg: #F8FAFC;
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --info-bg: #EFF6FF;
+            --info-border: #BFDBFE;
+            --info-text: #1E40AF;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--dark-navy);
+        }
+
+        .media-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .media-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #0A1128 0%, #1E293B 100%);
+            color: var(--white);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #94A3B8;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* CONTAINER & LAYOUT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark-navy);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* PRESS CONTACT BANNER */
+        .alert-banner {
+            background: var(--info-bg);
+            border: 1px solid var(--info-border);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+            align-items: flex-start;
+        }
+
+        .alert-banner i {
+            font-size: 2.2rem;
+            color: var(--info-text);
+        }
+
+        .alert-content h3 {
+            color: var(--info-text);
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+        }
+
+        .alert-content p {
+            color: #1E3A8A;
+            font-size: 0.95rem;
+        }
+
+        /* CARDS GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(0, 184, 117, 0.1);
+            color: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark-navy);
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-navy);
+            color: #94A3B8;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #1E293B;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .alert-banner { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-wallet"></i> OPay<span>.</span>
+            </a>
+            <a href="#inquiries" class="media-btn">
+                <i class="fa-solid fa-newspaper"></i> Media Inquiries
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Official OPay <span>Press Guidelines</span></h1>
+        <p>Guidelines for media representatives, journalists, and brand partners covering OPay news, announcements, and visual assets.</p>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- PRESS CONTACT BANNER -->
+        <div class="alert-banner" id="inquiries">
+            <i class="fa-solid fa-bullhorn"></i>
+            <div class="alert-content">
+                <h3>Official Media Desk & Contact</h3>
+                <p>For urgent press inquiries, official statements, or interview scheduling with OPay executives, contact our Corporate Communications team at <strong>press@opay-inc.com</strong> or <strong>partnerships@opay-inc.com</strong>.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 1: PRESS & INQUIRY PROTOCOLS -->
+        <div class="section-header">
+            <h2>1. Media & Spokesperson Protocols</h2>
+            <p>Rules regarding official communications, interviews, and press statements.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-microphone"></i></div>
+                <h3>Authorized Spokespersons</h3>
+                <ul>
+                    <li>Only designated PR representatives and C-Suite Executives speak on behalf of OPay.</li>
+                    <li>Comments from unverified employees do not constitute official company positions.</li>
+                    <li>All interview requests must be submitted 48 hours prior to scheduling.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-newspaper"></i></div>
+                <h3>Fact Verification & Reporting</h3>
+                <ul>
+                    <li>Journalists should verify user numbers, metrics, or revenue stats with OPay PR.</li>
+                    <li>Off-the-record discussions require explicit mutual agreement before interviews.</li>
+                    <li>Embargoed press releases must not be published prior to the specified release time.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Crisis Communications</h3>
+                <ul>
+                    <li>All inquiries regarding security incidents or audits are routed to PR.</li>
+                    <li>OPay releases official statements exclusively through verified newsroom portals.</li>
+                    <li>Speculative reporting without official confirmation is strongly discouraged.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 2: BRAND ASSETS & BOILERPLATE -->
+        <div class="section-header">
+            <h2>2. Brand Assets & Corporate Usage</h2>
+            <p>Standards for using OPay logos, photography, and standard description text.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-image"></i></div>
+                <h3>Logo & Media Kit Usage</h3>
+                <ul>
+                    <li>Use high-resolution vectors from the official OPay Media Kit.</li>
+                    <li>Do not alter primary logo colors (`#00B875`), proportions, or typography.</li>
+                    <li>Maintain a minimum clear space around the logo in all publication layouts.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <h3>Approved Corporate Boilerplate</h3>
+                <ul>
+                    <li>Identify OPay as a "leading financial services platform licensed by the CBN".</li>
+                    <li>Reference deposit insurance coverage under the NDIC framework in financial press.</li>
+                    <li>Use accurate terminology: "OPay Digital Services Limited".</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-camera"></i></div>
+                <h3>Photography & Multimedia</h3>
+                <ul>
+                    <li>Media may use executive headshots supplied in the press kit.</li>
+                    <li>Product UI screenshots must showcase the latest app interface version.</li>
+                    <li>Video footage requests require advance written approval from Corporate Communications.</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 OPay Digital Services Limited. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

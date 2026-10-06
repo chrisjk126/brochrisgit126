@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPay Terms of Service Guidelines</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        :root {
+            --primary: #00B875;
+            --primary-dark: #008756;
+            --dark-navy: #0A1128;
+            --light-bg: #F8FAFC;
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --terms-bg: #F0FDF4;
+            --terms-border: #86EFAC;
+            --terms-text: #166534;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--dark-navy);
+        }
+
+        .action-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #0A1128 0%, #1E293B 100%);
+            color: var(--white);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #94A3B8;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* CONTAINER & LAYOUT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark-navy);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* BANNER */
+        .alert-banner {
+            background: var(--terms-bg);
+            border: 1px solid var(--terms-border);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+            align-items: flex-start;
+        }
+
+        .alert-banner i {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .alert-content h3 {
+            color: var(--terms-text);
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+        }
+
+        .alert-content p {
+            color: #14532D;
+            font-size: 0.95rem;
+        }
+
+        /* CARDS GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(0, 184, 117, 0.1);
+            color: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark-navy);
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-navy);
+            color: #94A3B8;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #1E293B;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .alert-banner { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-wallet"></i> OPay<span>.</span>
+            </a>
+            <a href="#terms-rules" class="action-btn">
+                <i class="fa-solid fa-file-contract"></i> Read Terms
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Official OPay <span>Terms of Service</span></h1>
+        <p>User agreement, operational conditions, eligibility criteria, permitted service usage, and liability framework.</p>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- LEGAL BINDING BANNER -->
+        <div class="alert-banner">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <div class="alert-content">
+                <h3>Binding Agreement & Regulatory Oversight</h3>
+                <p>By creating an OPay account or using any OPay service, you enter into a legally binding contract governed by the laws of the Federal Republic of Nigeria, Central Bank of Nigeria (CBN) regulations, and NDIC operational rules.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 1: ACCOUNT ELIGIBILITY & USER RESPONSIBILITIES -->
+        <div class="section-header" id="terms-rules">
+            <h2>1. Account Eligibility & Credential Security</h2>
+            <p>Rules regarding account registration, identity compliance, and user security obligations.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-user-check"></i></div>
+                <h3>Age & Identification Criteria</h3>
+                <ul>
+                    <li>Users must be at least 18 years old to open an independent account.</li>
+                    <li>Accounts must be registered with personal, accurate, and verifiable identity data.</li>
+                    <li>NIN and BVN links are required to unlock active transaction capabilities.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-key"></i></div>
+                <h3>PIN & Credential Responsibility</h3>
+                <ul>
+                    <li>Users are solely responsible for keeping their 4-digit PIN and OTPs secret.</li>
+                    <li>OPay staff will never request your secret transaction PIN or passwords.</li>
+                    <li>Losses resulting from user negligence or shared credentials are non-refundable.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                <h3>Service Modifications & Updates</h3>
+                <ul>
+                    <li>OPay reserves the right to modify fees, limits, or features with prior notice.</li>
+                    <li>Continued use of OPay services after updates constitutes acceptance of terms.</li>
+                    <li>Users may terminate account usage if they disagree with updated terms.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 2: PROHIBITED CONDUCT & TERMINATION -->
+        <div class="section-header">
+            <h2>2. Prohibited Conduct & Account Suspension</h2>
+            <p>Forbidden practices, breach consequences, and account termination policies.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-ban"></i></div>
+                <h3>Strictly Prohibited Activities</h3>
+                <ul>
+                    <li>Prohibition of money laundering, fraud, identity theft, or unauthorized fund routing.</li>
+                    <li>Sale, renting, or transfer of OPay account ownership to third parties is banned.</li>
+                    <li>Automated scraping, bot interactions, or reverse-engineering app protocols.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>Account Freezing & Suspension</h3>
+                <ul>
+                    <li>OPay may freeze accounts flagged for suspicious or fraudulent activity.</li>
+                    <li>Regulatory mandates (CBN/EFCC orders) require immediate temporary locks.</li>
+                    <li>Unclaimed or dormant balances remain protected under CBN escheat regulations.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-gavel"></i></div>
+                <h3>Limitation of Liability & Disputes</h3>
+                <ul>
+                    <li>OPay is not liable for third-party merchant service quality or external outages.</li>
+                    <li>Disputes are subject to mediation prior to formal arbitration or litigation.</li>
+                    <li>Governing law rests under the jurisdiction of Nigerian courts.</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 OPay Digital Services Limited. Licensed by CBN and Insured by NDIC.</p>
+    </footer>
+
+</body>
+</html>

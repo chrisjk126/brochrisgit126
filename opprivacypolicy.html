@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPay Privacy Policy & Data Protection Guidelines</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        :root {
+            --primary: #00B875;
+            --primary-dark: #008756;
+            --dark-navy: #0A1128;
+            --light-bg: #F8FAFC;
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --privacy-bg: #F0FDF4;
+            --privacy-border: #86EFAC;
+            --privacy-text: #166534;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--dark-navy);
+        }
+
+        .action-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #0A1128 0%, #1E293B 100%);
+            color: var(--white);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #94A3B8;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* CONTAINER & LAYOUT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark-navy);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* BANNER */
+        .alert-banner {
+            background: var(--privacy-bg);
+            border: 1px solid var(--privacy-border);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+            align-items: flex-start;
+        }
+
+        .alert-banner i {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .alert-content h3 {
+            color: var(--privacy-text);
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+        }
+
+        .alert-content p {
+            color: #14532D;
+            font-size: 0.95rem;
+        }
+
+        /* CARDS GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(0, 184, 117, 0.1);
+            color: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark-navy);
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-navy);
+            color: #94A3B8;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #1E293B;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .alert-banner { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-wallet"></i> OPay<span>.</span>
+            </a>
+            <a href="#dpo-contact" class="action-btn">
+                <i class="fa-solid fa-user-shield"></i> Contact DPO
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Official OPay <span>Privacy Policy</span></h1>
+        <p>Principles governing data collection, privacy compliance, user consent, third-party sharing, and personal data security.</p>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- NDPR / DATA PROTECTION BANNER -->
+        <div class="alert-banner">
+            <i class="fa-solid fa-lock"></i>
+            <div class="alert-content">
+                <h3>NDPR & NDPA 2023 Compliance Guarantee</h3>
+                <p>OPay strictly adheres to the Nigeria Data Protection Act (NDPA) and Nigerian Data Protection Regulation (NDPR). Your personal and financial data is encrypted and processed in full compliance with central banking regulations and privacy laws.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 1: DATA COLLECTION & USAGE -->
+        <div class="section-header" id="dpo-contact">
+            <h2>1. Information Collection & Usage Principles</h2>
+            <p>What data we collect, how we collect it, and the legal basis for processing.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-address-card"></i></div>
+                <h3>Identity & KYC Information</h3>
+                <ul>
+                    <li>Collection of full name, phone number, email address, and residential address.</li>
+                    <li>Mandatory verification of NIN and BVN mandated by CBN AML/CFT regulations.</li>
+                    <li>Biometric data collection (live selfies) for facial identification and fraud protection.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <h3>Technical & Device Telemetry</h3>
+                <ul>
+                    <li>IP address, device hardware model, OS version, and unique device identifier logs.</li>
+                    <li>Real-time geolocation tracking for fraud monitoring and terminal location validation.</li>
+                    <li>In-app usage logs and cookie identifiers to enhance account session stability.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+                <h3>Core Processing Purposes</h3>
+                <ul>
+                    <li>Provision and maintenance of wallet accounts, payment routing, and savings.</li>
+                    <li>Automated transaction monitoring and anti-fraud fraud screening.</li>
+                    <li>Mandatory reporting and regulatory compliance updates to financial authorities.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 2: DATA RIGHTS & SECURITY -->
+        <div class="section-header">
+            <h2>2. Third-Party Sharing & User Rights</h2>
+            <p>How data is shared with partners, retained, and protected under privacy rights.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                <h3>Third-Party Disclosures</h3>
+                <ul>
+                    <li>Data shared exclusively with regulatory bodies (CBN, NDIC, NIBSS, NCDC).</li>
+                    <li>Integration with accredited identity verification and credit bureau partners.</li>
+                    <li>Encrypted data storage on ISO 27001-certified secure cloud infrastructure.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Data Security & Encryption</h3>
+                <ul>
+                    <li>TLS 1.3 protocol encryption for all data in transit across mobile endpoints.</li>
+                    <li>AES-256 bit encryption applied to sensitive customer data at rest.</li>
+                    <li>Annual independent third-party vulnerability assessments and penetration tests.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-user-gear"></i></div>
+                <h3>Data Subject Rights</h3>
+                <ul>
+                    <li>Right to request access to or copies of your personal stored data.</li>
+                    <li>Right to request correction of inaccurate or outdated profile details.</li>
+                    <li>Direct escalation line to Data Protection Officer at <strong>dpo@opay-inc.com</strong>.</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 OPay Digital Services Limited. Licensed by CBN and Insured by NDIC.</p>
+    </footer>
+
+</body>
+</html>
